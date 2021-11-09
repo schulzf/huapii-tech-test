@@ -1,14 +1,9 @@
 import CloseIcon from '@mui/icons-material/Close';
-import {
-  Button,
-  Container,
-  Grid,
-  IconButton,
-  TextField,
-} from '@mui/material';
+import { Button, Grid, IconButton, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
 import { useHistory } from 'react-router';
+import { Wrapper } from '../components/Wrapper';
 import { useGlobalStyles } from '../utils/globalStyles';
 
 interface AddProps {}
@@ -19,64 +14,62 @@ export const Add: React.FC<AddProps> = () => {
   const history = useHistory();
 
   return (
-    <div className={styles.wrapper}>
-      <Container maxWidth='md' className={styles.container}>
-        <div className={styles.flex_space_between}>
-          <h1 className={styles.title}>Add Education</h1>
-          <IconButton onClick={() => history.push('/')}>
-            <CloseIcon />
-          </IconButton>
-        </div>
+    <Wrapper>
+      <div className={styles.flex_space_between}>
+        <h1 className={styles.title}>Add Education</h1>
+        <IconButton onClick={() => history.push('/')}>
+          <CloseIcon />
+        </IconButton>
+      </div>
 
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={2}></Grid>
-          <Grid item xs={12} md={10}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  label='School Name'
-                  variant='standard'
-                  fullWidth
-                />
-                <TextField
-                  label='Field of Study'
-                  variant='standard'
-                  fullWidth
-                  className={globalStyles.mt5}
-                />
-                <TextField
-                  label='Start date'
-                  variant='standard'
-                  fullWidth
-                  className={globalStyles.mt5}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  label='Education Level'
-                  variant='standard'
-                  fullWidth
-                />
-                <TextField
-                  label='City'
-                  variant='standard'
-                  fullWidth
-                  className={globalStyles.mt5}
-                />
-              </Grid>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={2}></Grid>
+        <Grid item xs={12} md={10}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <TextField
+                label='School Name'
+                variant='standard'
+                fullWidth
+              />
+              <TextField
+                label='Field of Study'
+                variant='standard'
+                fullWidth
+                className={globalStyles.mt5}
+              />
+              <TextField
+                label='Start date'
+                variant='standard'
+                fullWidth
+                className={globalStyles.mt5}
+              />
             </Grid>
-            <textarea
-              name=''
-              className={styles.textarea}
-              rows={10}></textarea>
-            <Button variant='contained' size='large'>
-              Save
-            </Button>
+            <Grid item xs={12} md={6}>
+              <TextField
+                label='Education Level'
+                variant='standard'
+                fullWidth
+              />
+              <TextField
+                label='City'
+                variant='standard'
+                fullWidth
+                className={globalStyles.mt5}
+              />
+            </Grid>
           </Grid>
+          <textarea
+            name=''
+            className={styles.textarea}
+            rows={10}></textarea>
+          <Button variant='contained' size='large'>
+            Save
+          </Button>
         </Grid>
-        {/* <pre>{JSON.stringify(userEducation, null, 2)}</pre> */}
-      </Container>
-    </div>
+      </Grid>
+      {/* <pre>{JSON.stringify(userEducation, null, 2)}</pre> */}
+    </Wrapper>
   );
 };
 
