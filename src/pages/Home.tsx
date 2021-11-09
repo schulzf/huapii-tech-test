@@ -19,6 +19,7 @@ export const Home: React.FC<HomeProps> = () => {
 
   useEffect(() => {
     dispatch(getEducationRecords(123));
+    // eslint-disable-next-line
   }, []);
 
   return (
